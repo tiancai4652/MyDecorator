@@ -17,6 +17,9 @@
             <i:Interaction.Triggers>                <i:EventTrigger EventName="PreviewMouseDown">                    <prism:InvokeCommandAction Command="{Binding GridMouseDownCommand}"  />                </i:EventTrigger>                <i:EventTrigger EventName="PreviewMouseMove">                    <prism:InvokeCommandAction Command="{Binding GridMouseMoveCommand}"  />                </i:EventTrigger>
                 <i:EventTrigger EventName="PreviewMouseUp">                    <prism:InvokeCommandAction Command="{Binding GridMouseUpCommand}"  />                </i:EventTrigger>            </i:Interaction.Triggers>
         </InkCanvas>
-        <TextBlock Grid.Row="1" Text="{Binding Message}">dddd</TextBlock>
+        <Grid Grid.Row="1">
+            <TextBlock  Text="{Binding Message}">dddd</TextBlock>
+            <Button Width="100" Height="25" Command="{Binding AddControlCommand}">Add</Button>
+        </Grid>
     </Grid>
 </Window>

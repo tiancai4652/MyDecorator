@@ -1,11 +1,14 @@
 ﻿using MyDecorator.Base;
+using MyDecorator.Controls;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace MyDecorator.ViewModels
 {
@@ -29,8 +32,6 @@ namespace MyDecorator.ViewModels
         public MainWindowViewModel(IEventAggregator eventAggregator)
         {
             _eventAggregator = eventAggregator;
-
-            Controls.Add(new Button() { Width = 200, Height = 200 });
             Controls.CollectionChanged += Controls_CollectionChanged;
         }
 
@@ -46,5 +47,16 @@ namespace MyDecorator.ViewModels
             set { SetProperty(ref _Controls, value); }
         }
 
+        private DelegateCommand _AddControlCommand;
+        public DelegateCommand AddControlCommand =>
+            _AddControlCommand ?? (_AddControlCommand = new DelegateCommand(ExecuteAddControlCommand));
+
+        void ExecuteAddControlCommand()
+        {
+            var grid = new Grid() { Width = 200, Height = 200,Background= new SolidColorBrush( Colors.Gray),Opacity=0.5 };
+            Controls.Add(grid);
+            var layer = AdornerLayer.GetAdornerLayer(grid);
+            layer.Add(new MyAdorner(grid));
+        }
     }
 }
