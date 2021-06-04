@@ -19,6 +19,7 @@ namespace MyDecorator.ViewModels
 
         Point startPoint;
         Rectangle selectRect;
+        bool startDraw = false;
 
         private DelegateCommand<MouseButtonEventArgs> _GridMouseDownCommand;
         public DelegateCommand<MouseButtonEventArgs> GridMouseDownCommand =>
@@ -27,6 +28,7 @@ namespace MyDecorator.ViewModels
         void ExecuteGridMouseDownCommand(MouseButtonEventArgs parameter)
         {
             startPoint = parameter.GetPosition(Application.Current.MainWindow);
+            startDraw = true;
             Message = startPoint.ToString();
         }
 
@@ -36,8 +38,11 @@ namespace MyDecorator.ViewModels
 
         void ExecuteGridMouseMoveCommand(MouseEventArgs parameter)
         {
-            Point tempEndPoint = parameter.GetPosition(Application.Current.MainWindow);
-            DrawRect(tempEndPoint, startPoint);
+            if (startDraw)
+            {
+                Point tempEndPoint = parameter.GetPosition(Application.Current.MainWindow);
+                DrawRect(tempEndPoint, startPoint);
+            }
         }
 
         private DelegateCommand<MouseButtonEventArgs> _GridMouseUpCommand;
@@ -46,7 +51,12 @@ namespace MyDecorator.ViewModels
 
         void ExecuteGridMouseUpCommand(MouseButtonEventArgs parameter)
         {
-            Controls.Remove(selectRect);
+            if (startDraw)
+            {
+                Controls.Remove(selectRect);
+                selectRect = null;
+                startDraw = false;
+            }
         }
 
         private void DrawRect(Point endPoint, Point startPoint)
