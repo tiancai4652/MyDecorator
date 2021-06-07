@@ -20,6 +20,7 @@
         <Grid Grid.Row="1">
             <TextBlock  Text="{Binding Message}">dddd</TextBlock>
             <Button Width="100" Height="25" Command="{Binding AddControlCommand}">Add</Button>
+            <Button Width="100" Height="25" Command="{Binding AddAdornerCommand}" Margin="343,38,76,38">AddAdorner</Button>
         </Grid>
     </Grid>
 </Window>

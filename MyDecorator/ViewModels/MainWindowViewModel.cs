@@ -51,12 +51,22 @@ namespace MyDecorator.ViewModels
         public DelegateCommand AddControlCommand =>
             _AddControlCommand ?? (_AddControlCommand = new DelegateCommand(ExecuteAddControlCommand));
 
+        Grid grid;
         void ExecuteAddControlCommand()
         {
-            var grid = new Grid() { Width = 200, Height = 200,Background= new SolidColorBrush( Colors.Gray),Opacity=0.5 };
+            grid = new Grid() { Width = 200, Height = 200,Background= new SolidColorBrush( Colors.Gray),Opacity=0.5 };
             Controls.Add(grid);
+       
+        }
+
+        private DelegateCommand _AddAdornerCommand;
+        public DelegateCommand AddAdornerCommand =>
+            _AddAdornerCommand ?? (_AddAdornerCommand = new DelegateCommand(ExecuteAddAdornerCommand));
+
+        void ExecuteAddAdornerCommand()
+        {
             var layer = AdornerLayer.GetAdornerLayer(grid);
-            layer.Add(new MyAdorner(grid));
+            layer.Add(new FloatingPanelAdorner(grid));
         }
     }
 }
