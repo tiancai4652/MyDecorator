@@ -55,6 +55,9 @@ namespace MyDecorator.ViewModels
         void ExecuteAddControlCommand()
         {
             grid = new Grid() { Width = 200, Height = 200,Background= new SolidColorBrush( Colors.Gray),Opacity=0.5 };
+            InkCanvas.SetTop(grid,100);
+            InkCanvas.SetLeft(grid, 100);
+
             Controls.Add(grid);
        
         }
@@ -67,6 +70,20 @@ namespace MyDecorator.ViewModels
         {
             var layer = AdornerLayer.GetAdornerLayer(grid);
             layer.Add(new ContentAdorner(grid));
+        }
+
+        private DelegateCommand _RemoveAdornerCommand;
+        public DelegateCommand RemoveAdornerCommand =>
+            _RemoveAdornerCommand ?? (_RemoveAdornerCommand = new DelegateCommand(ExecuteRemoveAdornerCommand));
+
+        void ExecuteRemoveAdornerCommand()
+        {
+            var layer = AdornerLayer.GetAdornerLayer(grid);
+            var arr = layer.GetAdorners(grid);
+            for (int i = 0; i < arr.Length; i++)
+            {
+                layer.Remove(arr[i]);
+            }
         }
     }
 }

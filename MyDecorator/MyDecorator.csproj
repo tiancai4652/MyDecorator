@@ -56,7 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Controls\DecoratorEffect.xaml">
+    <Page Include="Controls\DragDropControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -70,11 +70,11 @@
     </Compile>
     <Compile Include="Base\CollectionChanged.cs" />
     <Compile Include="Base\IManipulation.cs" />
-    <Compile Include="Controls\DecoratorEffect.xaml.cs">
-      <DependentUpon>DecoratorEffect.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\ContentAdorner.cs" />
-    <Compile Include="Controls\MyAdorner.cs" />
+    <Compile Include="Controls\DragDropControl.xaml.cs">
+      <DependentUpon>DragDropControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\IAdonerControl.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\MWVM_SelectedRect.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">

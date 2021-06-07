@@ -4,7 +4,7 @@
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
-        
+        xmlns:controls="clr-namespace:MyDecorator.Controls"
         Title="{Binding Title}" Height="350" Width="525" WindowState="Maximized">
 
     <Grid>
@@ -17,10 +17,12 @@
             <i:Interaction.Triggers>                <i:EventTrigger EventName="PreviewMouseDown">                    <prism:InvokeCommandAction Command="{Binding GridMouseDownCommand}"  />                </i:EventTrigger>                <i:EventTrigger EventName="PreviewMouseMove">                    <prism:InvokeCommandAction Command="{Binding GridMouseMoveCommand}"  />                </i:EventTrigger>
                 <i:EventTrigger EventName="PreviewMouseUp">                    <prism:InvokeCommandAction Command="{Binding GridMouseUpCommand}"  />                </i:EventTrigger>            </i:Interaction.Triggers>
         </InkCanvas>
+        <controls:DragDropControl Width="100" Height="100"></controls:DragDropControl>
         <Grid Grid.Row="1">
             <TextBlock  Text="{Binding Message}">dddd</TextBlock>
-            <Button Width="100" Height="25" Command="{Binding AddControlCommand}">Add</Button>
-            <Button Width="100" Height="25" Command="{Binding AddAdornerCommand}" Margin="343,38,76,38">AddAdorner</Button>
+            <Button Width="100" Height="25" Command="{Binding AddControlCommand}" Margin="59,38,360,37">Add</Button>
+            <Button Width="100" Height="25" Command="{Binding AddAdornerCommand}" Margin="198,38,221,37">AddAdorner</Button>
+            <Button Width="100" Height="25" Command="{Binding RemoveAdornerCommand}" Margin="334,38,85,37">RemoveAdorner</Button>
         </Grid>
     </Grid>
 </Window>
