@@ -73,7 +73,7 @@
     <Compile Include="Controls\DecoratorEffect.xaml.cs">
       <DependentUpon>DecoratorEffect.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\FloatingPanelAdorner.cs" />
+    <Compile Include="Controls\ContentAdorner.cs" />
     <Compile Include="Controls\MyAdorner.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\MWVM_SelectedRect.cs" />

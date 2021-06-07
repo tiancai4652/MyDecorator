@@ -66,7 +66,7 @@ namespace MyDecorator.ViewModels
         void ExecuteAddAdornerCommand()
         {
             var layer = AdornerLayer.GetAdornerLayer(grid);
-            layer.Add(new FloatingPanelAdorner(grid));
+            layer.Add(new ContentAdorner(grid));
         }
     }
 }
