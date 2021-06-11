@@ -70,6 +70,7 @@
     </Compile>
     <Compile Include="Base\CollectionChanged.cs" />
     <Compile Include="Base\IManipulation.cs" />
+    <Compile Include="Base\SimpleCircleAdorner.cs" />
     <Compile Include="Controls\ContentAdorner.cs" />
     <Compile Include="Controls\DragDropControl.xaml.cs">
       <DependentUpon>DragDropControl.xaml</DependentUpon>

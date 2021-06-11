@@ -21,7 +21,8 @@
         <Grid Grid.Row="1">
             <TextBlock  Text="{Binding Message}">dddd</TextBlock>
             <Button Width="100" Height="25" Command="{Binding AddControlCommand}" Margin="59,38,360,37">Add</Button>
-            <Button Width="100" Height="25" Command="{Binding AddAdornerCommand}" Margin="198,38,221,37">AddAdorner</Button>
+            <Button Width="100" Height="25" Command="{Binding AddContentAdornerCommand}" Margin="198,21,221,54">AddContentAdorner</Button>
+            <Button Width="100" Height="25" Command="{Binding AddCommonAdornerCommand}" Margin="198,63,221,12">AddCommonAdorner</Button>
             <Button Width="100" Height="25" Command="{Binding RemoveAdornerCommand}" Margin="334,38,85,37">RemoveAdorner</Button>
         </Grid>
     </Grid>

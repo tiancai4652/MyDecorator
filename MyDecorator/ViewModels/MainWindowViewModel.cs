@@ -62,16 +62,27 @@ namespace MyDecorator.ViewModels
        
         }
 
-        private DelegateCommand _AddAdornerCommand;
-        public DelegateCommand AddAdornerCommand =>
-            _AddAdornerCommand ?? (_AddAdornerCommand = new DelegateCommand(ExecuteAddAdornerCommand));
+        private DelegateCommand _AddContentAdornerCommand;
+        public DelegateCommand AddContentAdornerCommand =>
+            _AddContentAdornerCommand ?? (_AddContentAdornerCommand = new DelegateCommand(ExecuteAddContentAdornerCommand));
 
-        void ExecuteAddAdornerCommand()
+        void ExecuteAddContentAdornerCommand()
         {
             var layer = AdornerLayer.GetAdornerLayer(grid);
             DragDropControl contentControl = new DragDropControl();
             contentControl.Background = new SolidColorBrush(Colors.Black) { Opacity = 0.1 };
             layer.Add(new ContentAdorner(grid, contentControl));
+
+        }
+
+        private DelegateCommand _AddCommonAdornerCommand;
+        public DelegateCommand AddCommonAdornerCommand =>
+            _AddCommonAdornerCommand ?? (_AddCommonAdornerCommand = new DelegateCommand(ExecuteAddCommonAdornerCommand));
+
+        void ExecuteAddCommonAdornerCommand()
+        {
+            var layer = AdornerLayer.GetAdornerLayer(grid);
+            layer.Add(new SimpleCircleAdorner(grid));
         }
 
         private DelegateCommand _RemoveAdornerCommand;
