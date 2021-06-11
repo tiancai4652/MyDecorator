@@ -55,8 +55,8 @@ namespace MyDecorator.ViewModels
         void ExecuteAddControlCommand()
         {
             grid = new Grid() { Width = 200, Height = 200,Background= new SolidColorBrush( Colors.Gray),Opacity=0.5 };
-            InkCanvas.SetTop(grid,100);
-            InkCanvas.SetLeft(grid, 100);
+            InkCanvas.SetTop(grid,200);
+            InkCanvas.SetLeft(grid, 400);
 
             Controls.Add(grid);
        
@@ -69,7 +69,7 @@ namespace MyDecorator.ViewModels
         void ExecuteAddContentAdornerCommand()
         {
             var layer = AdornerLayer.GetAdornerLayer(grid);
-            DragDropControl contentControl = new DragDropControl();
+            DragDropControl contentControl = new DragDropControl(grid);
             contentControl.Background = new SolidColorBrush(Colors.Black) { Opacity = 0.1 };
             layer.Add(new ContentAdorner(grid, contentControl));
 

@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
     <Border BorderThickness="5" >
         <Grid>
-
+            <Thumb Name="thumMove" Cursor="ScrollAll" DragStarted="thumMove_DragStarted" DragDelta="thumMove_DragDelta" DragCompleted="thumMove_DragCompleted"/>
             <Thumb Width="1" Cursor="SizeWE" BorderBrush="Orange" HorizontalAlignment="Left"></Thumb>
             <Thumb Width="1" Cursor="SizeWE"  BorderBrush="Orange" HorizontalAlignment="Right"></Thumb>
             <Thumb Height="1" Cursor="SizeNS" BorderBrush="Orange" VerticalAlignment="Top"></Thumb>

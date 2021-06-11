@@ -21,8 +21,10 @@ namespace MyDecorator.Controls
     /// </summary>
     public partial class DragDropControl : UserControl, IAdonerControl
     {
-        public DragDropControl()
+        UIElement _adornedElement;
+        public DragDropControl(UIElement adornedElement)
         {
+            _adornedElement = adornedElement;
             InitializeComponent();
         }
 
@@ -34,6 +36,29 @@ namespace MyDecorator.Controls
 
         }
 
+
+
         #endregion
+
+        bool isCanMove = false;
+
+        private void thumMove_DragStarted(object sender, System.Windows.Controls.Primitives.DragStartedEventArgs e)
+        {
+            isCanMove = true;
+        }
+
+        private void thumMove_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
+        {
+            if (isCanMove)
+            {
+                InkCanvas.SetLeft(_adornedElement, InkCanvas.GetLeft(_adornedElement) + e.HorizontalChange);
+                InkCanvas.SetTop(_adornedElement, InkCanvas.GetTop(_adornedElement) + e.VerticalChange);
+            }
+        }
+
+        private void thumMove_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
+        {
+            isCanMove = false;
+        }
     }
 }
