@@ -69,7 +69,9 @@ namespace MyDecorator.ViewModels
         void ExecuteAddAdornerCommand()
         {
             var layer = AdornerLayer.GetAdornerLayer(grid);
-            layer.Add(new ContentAdorner(grid));
+            DragDropControl contentControl = new DragDropControl();
+            contentControl.Background = new SolidColorBrush(Colors.Black) { Opacity = 0.1 };
+            layer.Add(new ContentAdorner(grid, contentControl));
         }
 
         private DelegateCommand _RemoveAdornerCommand;

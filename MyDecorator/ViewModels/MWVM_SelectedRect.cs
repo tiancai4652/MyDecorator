@@ -70,14 +70,6 @@ namespace MyDecorator.ViewModels
             }
             selectRect.Width = Math.Abs(endPoint.X - startPoint.X);
             selectRect.Height = Math.Abs(endPoint.Y - startPoint.Y);
-            //if (endPoint.X - startPoint.X >= 0)
-            //    InkCanvas.SetLeft(selectRect, startPoint.X);
-            //else
-            //    InkCanvas.SetLeft(selectRect, endPoint.X);
-            //if (endPoint.Y - startPoint.Y >= 0)
-            //    InkCanvas.SetTop(selectRect, startPoint.Y);
-            //else
-            //    InkCanvas.SetTop(selectRect, endPoint.Y);
         }
     }
 }
