@@ -80,9 +80,12 @@ namespace MyDecorator.ViewModels
         {
             var layer = AdornerLayer.GetAdornerLayer(grid);
             var arr = layer.GetAdorners(grid);
-            for (int i = 0; i < arr.Length; i++)
+            if (arr != null&&arr.Length>0)
             {
-                layer.Remove(arr[i]);
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    layer.Remove(arr[i]);
+                }
             }
         }
     }

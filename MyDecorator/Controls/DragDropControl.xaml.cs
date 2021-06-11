@@ -31,6 +31,7 @@ namespace MyDecorator.Controls
         {
             int margin = 10;
             return new Rect(-margin, -margin, finalSize.Width + 2 * margin, finalSize.Height + 2 * margin);
+
         }
 
         #endregion

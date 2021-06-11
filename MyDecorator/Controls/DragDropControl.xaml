@@ -9,16 +9,15 @@
     <Border BorderThickness="5" >
         <Grid>
 
-            <Thumb Width="1" Cursor="ScrollW" BorderBrush="Orange" HorizontalAlignment="Left"></Thumb>
-            <Thumb Width="1" Cursor="ScrollE"  BorderBrush="Orange" HorizontalAlignment="Right"></Thumb>
-            <Thumb   Height="1" Cursor="ScrollN" BorderBrush="Orange" VerticalAlignment="Top"></Thumb>
-            <Thumb  Height="1" Cursor="ScrollS" BorderBrush="Orange" VerticalAlignment="Bottom"></Thumb>
+            <Thumb Width="1" Cursor="SizeWE" BorderBrush="Orange" HorizontalAlignment="Left"></Thumb>
+            <Thumb Width="1" Cursor="SizeWE"  BorderBrush="Orange" HorizontalAlignment="Right"></Thumb>
+            <Thumb Height="1" Cursor="SizeNS" BorderBrush="Orange" VerticalAlignment="Top"></Thumb>
+            <Thumb  Height="1" Cursor="SizeNS" BorderBrush="Orange" VerticalAlignment="Bottom"></Thumb>
 
-            <Thumb Width="5" Height="5" Cursor="ScrollNW" BorderBrush="Red" HorizontalAlignment="Left" VerticalAlignment="Top"></Thumb>
-            <Thumb Width="5" Height="5" Cursor="ScrollNE" BorderBrush="Red" HorizontalAlignment="Right" VerticalAlignment="Top"></Thumb>
-
-            <Thumb Width="5" Height="5" Cursor="ScrollSW"  BorderBrush="Red" HorizontalAlignment="Left" VerticalAlignment="Bottom"></Thumb>
-            <Thumb Width="5" Height="5" Cursor="ScrollSE" BorderBrush="Red" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Thumb>
+            <Thumb Width="5" Height="5" Cursor="SizeNWSE" BorderBrush="Red" HorizontalAlignment="Left" VerticalAlignment="Top"></Thumb>
+            <Thumb Width="5" Height="5" Cursor="SizeNESW" BorderBrush="Red" HorizontalAlignment="Right" VerticalAlignment="Top"></Thumb>
+            <Thumb Width="5" Height="5" Cursor="SizeNESW"  BorderBrush="Red" HorizontalAlignment="Left" VerticalAlignment="Bottom"></Thumb>
+            <Thumb Width="5" Height="5" Cursor="SizeNWSE" BorderBrush="Red" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Thumb>
 
         </Grid>
     </Border>
